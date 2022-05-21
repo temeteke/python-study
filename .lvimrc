@@ -1,0 +1,7 @@
+function! DockerComposeTransform(cmd) abort
+	return 'docker-compose run --rm -T app '.a:cmd.' 2>/dev/null'
+endfunction
+
+let g:test#custom_transformations = {'docker-compose': function('DockerComposeTransform')}
+let g:test#transformation = 'docker-compose'
+let g:dispatch_compilers['docker-compose run --rm -T app'] = ''
