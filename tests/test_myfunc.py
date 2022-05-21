@@ -1,4 +1,4 @@
-from myfunc import myfunc
+from mypackage.myfunc import myfunc
 
 
 class TestMyFunc:
