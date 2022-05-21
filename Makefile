@@ -1,3 +1,9 @@
-.PHONY: test
+.PHONY: build run test
+build:
+	docker-compose build
+
+run:
+	docker-compose run --rm app python -m mypackage
+
 test:
-	pytest
+	docker-compose run --rm app python -m pytest
